@@ -21,7 +21,7 @@ public class TestLeapYear {
         assertFalse(isNotLeapYear(2021));
     }
 
-    private boolean isNotLeapYear(int i) {
-        return true;
+    private boolean isNotLeapYear(int year) {
+        return false;
     }
 }
