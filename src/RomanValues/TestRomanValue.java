@@ -27,10 +27,14 @@ public class TestRomanValue {
 
     private String romanNumber(int number) {
        String romanNumber = "";
-        for (int x = 0; x < number; x++){
-           romanNumber += "I";
+       if (number < 5){
+           for (int x = 0; x < number; x++){
+               romanNumber += "I";
 
+           }
        }
+       else return "V";
+
 
         return romanNumber;
     }
