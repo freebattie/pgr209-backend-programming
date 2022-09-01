@@ -11,7 +11,7 @@ public class TestRomanValue {
         assertTrue(romanNumber(1));
     }
 
-    private boolean romanNumber(int i) {
+    private boolean romanNumber(int number) {
         return true;
     }
 }
