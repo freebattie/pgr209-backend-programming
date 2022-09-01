@@ -17,6 +17,7 @@ public class TestRomanValue {
     }
 
     private String romanNumber(int number) {
-        return "I";
+       if (number == 1 ) return  "I";
+       else return  "II";
     }
 }
