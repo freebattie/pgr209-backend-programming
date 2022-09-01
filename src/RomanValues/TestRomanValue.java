@@ -36,6 +36,10 @@ public class TestRomanValue {
     void RomanValueNine(){
         assert(romanNumber(9).equalsIgnoreCase("IX"));
     }
+    @Test
+    void RomanValueFourteen(){
+        assert(romanNumber(14).equalsIgnoreCase("XIV"));
+    }
 
     private String romanNumber(int number) {
        String romanNumber = "";
