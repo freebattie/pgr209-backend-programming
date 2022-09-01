@@ -20,6 +20,11 @@ public class TestRomanValue {
         assert(romanNumber(3).equalsIgnoreCase("III"));
     }
 
+    @Test
+    void RomanValueFive(){
+        assert(romanNumber(5).equalsIgnoreCase("V"));
+    }
+
     private String romanNumber(int number) {
        String romanNumber = "";
         for (int x = 0; x < number; x++){
