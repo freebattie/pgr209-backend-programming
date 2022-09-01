@@ -34,6 +34,9 @@ public class TestRomanValue {
        if (number < 5){
            for (int x = 0; x < number; x++){
                romanNumber += "I";
+               if (x == 3){
+                   return "IV";
+               }
 
            }
        }
