@@ -15,6 +15,10 @@ public class TestRomanValue {
     void RomanValueTwo(){
         assert(romanNumber(2) == "II");
     }
+    @Test
+    void RomanValueThree(){
+        assert(romanNumber(3) == "III");
+    }
 
     private String romanNumber(int number) {
        if (number == 1 ) return  "I";
