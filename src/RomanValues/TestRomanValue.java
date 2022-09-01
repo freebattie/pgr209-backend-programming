@@ -47,27 +47,36 @@ public class TestRomanValue {
 
     private String romanNumber(int number) {
        String romanNumber = "";
+       int value = number;
        int temval = number;
-       if (number >= 9){
-           temval = temval - 10;
-           if (temval == -1){
-               romanNumber += "I";
-           }
-           romanNumber += "X";
-       }
-        if (temval >= 4){
-            temval = temval - 5;
-            if (temval == -1){
-                romanNumber += "I";
-            }
-            romanNumber += "V";
-        }
-       if (temval > 0){
-           for (int x = 0; x < temval; x++){
-               romanNumber += "I";
 
-           }
-       }
+        while (value > 0){
+
+            if (value <= 3){
+                romanNumber += "I";
+                value --;
+            }
+            if(value >= 10){
+                romanNumber += "X";
+                value-= 10;
+            }
+            if(value == 9){
+                romanNumber += "IX";
+                value -=9;
+            }
+            if (value >= 5 && value < 10){
+                romanNumber += "V";
+                value -= 5;
+            }
+            if(value == 4){
+                romanNumber += "IV";
+                value -=4;
+            }
+
+        }
+
+
+
         return romanNumber;
     }
 }
