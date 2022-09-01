@@ -19,14 +19,18 @@ public class TestRomanValue {
     void RomanValueThree(){
         assert(romanNumber(3).equalsIgnoreCase("III"));
     }
+    @Test
+    void RomanValueFour() {
+        assert (romanNumber(4).equalsIgnoreCase("IV"));
+    }
 
     @Test
     void RomanValueFive(){
         assert(romanNumber(5).equalsIgnoreCase("V"));
     }
     @Test
-    void RomanValueFour(){
-        assert(romanNumber(4).equalsIgnoreCase("IV"));
+    void RomanValueSix(){
+        assert(romanNumber(6).equalsIgnoreCase("VI"));
     }
 
     private String romanNumber(int number) {
