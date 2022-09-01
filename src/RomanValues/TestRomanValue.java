@@ -40,25 +40,23 @@ public class TestRomanValue {
     private String romanNumber(int number) {
        String romanNumber = "";
        int temval = number;
-        if (number >= 5){
+       if (number >= 9){
+           romanNumber = "X";
+           temval = temval - 10;
+       }
+        if (temval >= 4){
             romanNumber = "V";
             temval = temval - 5;
         }
-        if (number == 4){
-            romanNumber = "V";
-        }
-       if (temval < 4){
+       if (temval > 0){
            for (int x = 0; x < temval; x++){
                romanNumber += "I";
 
            }
        }
-       else if (temval == 4){
+       else if (temval == -1){
 
            romanNumber = "I".concat(romanNumber);
-       }
-       else  if(temval == 5){
-           romanNumber = "V";
        }
 
 
