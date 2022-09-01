@@ -8,10 +8,15 @@ public class TestRomanValue {
 
     @Test
     void RomanValueOne(){
-        assertTrue(romanNumber(1));
+        assert(romanNumber(1) == "I");
     }
 
-    private boolean romanNumber(int number) {
-        return true;
+    @Test
+    void RomanValueTwo(){
+        assert(romanNumber(2) == "II");
+    }
+
+    private String romanNumber(int number) {
+        return "I";
     }
 }
