@@ -45,12 +45,20 @@ public class TestRomanValue {
        String romanNumber = "";
        int temval = number;
        if (number >= 9){
-           romanNumber = "X";
            temval = temval - 10;
+           if (temval == -1){
+               romanNumber += "I";
+           }
+           romanNumber += "X";
        }
         if (temval >= 4){
-            romanNumber = "V";
             temval = temval - 5;
+            if (temval == -1){
+                romanNumber += "I";
+            }
+            romanNumber += "V";
+
+
         }
        if (temval > 0){
            for (int x = 0; x < temval; x++){
@@ -58,10 +66,7 @@ public class TestRomanValue {
 
            }
        }
-       else if (temval == -1){
 
-           romanNumber = "I".concat(romanNumber);
-       }
 
 
         return romanNumber;
