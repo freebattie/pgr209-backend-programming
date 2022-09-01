@@ -35,16 +35,27 @@ public class TestRomanValue {
 
     private String romanNumber(int number) {
        String romanNumber = "";
-       if (number < 5){
-           for (int x = 0; x < number; x++){
+       int temval = number;
+        if (number >= 5){
+            romanNumber = "V";
+            temval = temval - 5;
+        }
+        if (number == 4){
+            romanNumber = "V";
+        }
+       if (temval < 4){
+           for (int x = 0; x < temval; x++){
                romanNumber += "I";
-               if (x == 3){
-                   return "IV";
-               }
 
            }
        }
-       else return "V";
+       else if (temval == 4){
+
+           romanNumber = "I".concat(romanNumber);
+       }
+       else  if(temval == 5){
+           romanNumber = "V";
+       }
 
 
         return romanNumber;
