@@ -3,6 +3,7 @@ package week1;
 import org.junit.jupiter.api.Test;
 
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestLeapYear {
@@ -12,6 +13,15 @@ public class TestLeapYear {
     }
 
     private boolean isLeapYear(int year) {
+        return true;
+    }
+
+    @Test
+    void everyNoneFourthIsNotLeapYear(){
+        assertFalse(isNotLeapYear(2021));
+    }
+
+    private boolean isNotLeapYear(int i) {
         return true;
     }
 }
