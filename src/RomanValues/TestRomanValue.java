@@ -40,6 +40,10 @@ public class TestRomanValue {
     void RomanValueFourteen(){
         assert(romanNumber(14).equalsIgnoreCase("XIV"));
     }
+    @Test
+    void RomanValueTwenty(){
+        assert(romanNumber(20).equalsIgnoreCase("XX"));
+    }
 
     private String romanNumber(int number) {
        String romanNumber = "";
@@ -57,8 +61,6 @@ public class TestRomanValue {
                 romanNumber += "I";
             }
             romanNumber += "V";
-
-
         }
        if (temval > 0){
            for (int x = 0; x < temval; x++){
@@ -66,9 +68,6 @@ public class TestRomanValue {
 
            }
        }
-
-
-
         return romanNumber;
     }
 }
