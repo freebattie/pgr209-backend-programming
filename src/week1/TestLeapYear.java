@@ -12,6 +12,6 @@ public class TestLeapYear {
     }
 
     private boolean isLeapYear(int i) {
-        return false;
+        return true;
     }
 }
