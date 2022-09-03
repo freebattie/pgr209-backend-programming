@@ -2,6 +2,7 @@ package RomanValues;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 
 
 public class TestRomanValue {
@@ -48,9 +49,14 @@ public class TestRomanValue {
     void RomanValue50(){
         assert(romanNumber(50).equalsIgnoreCase("L"));
     }
+
+    @Test
+    void RomanValue2000(){
+        assert(romanNumber(2000).equalsIgnoreCase("MM"));
+    }
     @Test
     void RomanValue44(){
-        System.out.println(romanNumber(44));
+
         assert(romanNumber(44).equalsIgnoreCase("XLIV"));
     }
     @Test
@@ -64,48 +70,25 @@ public class TestRomanValue {
 
 
     private String romanNumber(int number) {
-       String romanNumber = "";
-       int value = number;
-       int temval = number;
 
-        while (value > 0){
-            if (value <= 3){
-                romanNumber += "I";
-                value --;
-            }
-            if(value > 400 && value < 500){
-                romanNumber += "CD";
-                value -=400;
-            }
-            if (value >= 50 && value < 100){
-                romanNumber += "L";
-                value-= 50;
-            }
+        StringBuilder romanNumber = new StringBuilder();
 
-            if(value > 40 && value < 50){
-                romanNumber += "XL";
-                value -=40;
-            }
 
-            if(value >= 10){
-                romanNumber += "X";
-                value-= 10;
-            }
-            if(value == 9){
-                romanNumber += "IX";
-                value -=9;
-            }
-            if(value == 4){
-                romanNumber += "IV";
-                value -=4;
-            }
-            if (value >= 5 && value < 10){
-                romanNumber += "V";
-                value -= 5;
-            }
 
+        String [] romanStrings = {"I","IV", "V", "IX","X", "XL", "L", "XC","C","CD","D","CM","M"};
+        int [] romanIntValue = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
+        int index = romanIntValue.length -1;
+        while (number > 0){
+            if (number >= romanIntValue[index]){
+                romanNumber.append(romanStrings[index]);
+                number -=  romanIntValue[index];
+            }
+            else
+                index--;
 
         }
-        return romanNumber;
+        return romanNumber.toString();
     }
+
+
 }
