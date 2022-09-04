@@ -1,7 +1,7 @@
 package week1.RomanValues;
 
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 
 public class TestRomanValue {
 
@@ -62,6 +62,10 @@ public class TestRomanValue {
         assert(romanNumber(55).equalsIgnoreCase("LV"));
     }
     @Test
+    void RomanValue900(){
+        assert(romanNumber(900).equalsIgnoreCase("CM"));
+    }
+    @Test
     void RomanValue444(){
         assert(romanNumber(444).equalsIgnoreCase("CDXLIV"));
     }
@@ -70,12 +74,12 @@ public class TestRomanValue {
     private String romanNumber(int number) {
 
         StringBuilder romanNumber = new StringBuilder();
-
-
-
         String [] romanStrings = {"I","IV", "V", "IX","X", "XL", "L", "XC","C","CD","D","CM","M"};
         int [] romanIntValue = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
-        int index = romanIntValue.length -1;
+        int offset = String.valueOf(number).length();
+
+        int index = offset >= 4 ? romanIntValue.length -1 :  (offset*4) -1;
+
         while (number > 0){
             if (number >= romanIntValue[index]){
                 romanNumber.append(romanStrings[index]);
@@ -83,7 +87,6 @@ public class TestRomanValue {
             }
             else
                 index--;
-
         }
         return romanNumber.toString();
     }
