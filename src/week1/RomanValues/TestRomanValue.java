@@ -9,20 +9,16 @@ public class TestRomanValue {
     void RomanValueOne(){
         assert(romanNumber(1).equalsIgnoreCase("I"));
     }
-
     @Test
     void RomanValueTwo(){
         assert(romanNumber(2).equalsIgnoreCase("II"));
     }
     @Test
-    void RomanValueThree(){
-        assert(romanNumber(3).equalsIgnoreCase("III"));
-    }
+    void RomanValueThree(){assert(romanNumber(3).equalsIgnoreCase("III"));}
     @Test
     void RomanValueFour() {
         assert (romanNumber(4).equalsIgnoreCase("IV"));
     }
-
     @Test
     void RomanValueFive(){
         assert(romanNumber(5).equalsIgnoreCase("V"));
@@ -47,16 +43,12 @@ public class TestRomanValue {
     void RomanValue50(){
         assert(romanNumber(50).equalsIgnoreCase("L"));
     }
-
     @Test
     void RomanValue2000(){
         assert(romanNumber(2000).equalsIgnoreCase("MM"));
     }
     @Test
-    void RomanValue44(){
-
-        assert(romanNumber(44).equalsIgnoreCase("XLIV"));
-    }
+    void RomanValue44(){assert(romanNumber(44).equalsIgnoreCase("XLIV"));}
     @Test
     void RomanValue55(){
         assert(romanNumber(55).equalsIgnoreCase("LV"));
@@ -77,8 +69,7 @@ public class TestRomanValue {
         String [] romanStrings = {"I","IV", "V", "IX","X", "XL", "L", "XC","C","CD","D","CM","M"};
         int [] romanIntValue = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
         int offset = String.valueOf(number).length();
-
-        int index = offset >= 4 ? romanIntValue.length -1 :  (offset*4) -1;
+        int index = offset >= 4 ? romanIntValue.length -1 : offset*4 -1;
 
         while (number > 0){
             if (number >= romanIntValue[index]){
